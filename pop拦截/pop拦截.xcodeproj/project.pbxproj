@@ -54,7 +54,6 @@
 		5A3FBE181D40A99200A42185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A3FBE2A1D40BC9E00A42185 /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
 		5A3FBE2B1D40BC9E00A42185 /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
-		5A3FBE2C1D40BC9E00A42185 /* LCNavigationControllerShouldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationControllerShouldProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +149,6 @@
 			children = (
 				5A3FBE2A1D40BC9E00A42185 /* LCNavigationController.h */,
 				5A3FBE2B1D40BC9E00A42185 /* LCNavigationController.m */,
-				5A3FBE2C1D40BC9E00A42185 /* LCNavigationControllerShouldProtocol.h */,
 			);
 			path = NavPop;
 			sourceTree = "<group>";
@@ -512,6 +510,7 @@
 				5A3FBE1D1D40A99200A42185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A3FBE1E1D40A99200A42185 /* Build configuration list for PBXNativeTarget "pop拦截Tests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +519,7 @@
 				5A3FBE201D40A99200A42185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A3FBE211D40A99200A42185 /* Build configuration list for PBXNativeTarget "pop拦截UITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +528,7 @@
 				5A3FBE231D40A99200A42185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

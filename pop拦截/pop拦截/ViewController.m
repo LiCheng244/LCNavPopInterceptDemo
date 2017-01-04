@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "LCNavigationControllerShouldProtocol.h"
+#import "LCNavigationController.h"
 
-@interface ViewController ()<UIAlertViewDelegate, LCNavigationControllerShouldProtocol>
+@interface ViewController ()<LCNavigationControllerShouldProtocol>
 
 @end
 
@@ -20,30 +20,24 @@
     
 }
 
-
 -(BOOL)lc_navationControllerShouldPopWhenSystemBackBtnselectted:(LCNavigationController *)navigationController{
-    UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您确认要放弃当前编辑的内容么?" delegate:self cancelButtonTitle:@"留在此页" otherButtonTitles:@"放弃编辑", nil];
-    [al show];
-    return NO;
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - 只要alertView的btn一点击就会调用
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if (!buttonIndex) { // 为了恢复<按钮的颜色 越快越好
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前编辑吗？" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃编辑" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"留在此页" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         self.navigationItem.hidesBackButton = YES;
         self.navigationItem.hidesBackButton = NO;
-    }
+    }];
+    [alert addAction:cancle];
+    [alert addAction:confirm];
+    
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
+    
+    return NO;
 }
-#pragma mark - 等alertView消失完在调用
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if (buttonIndex) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
+
 
 @end
